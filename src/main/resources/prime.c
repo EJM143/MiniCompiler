@@ -1,7 +1,7 @@
 /*
 Simple prime number generator
 */
-count = 1;
+count = -1;
 n = 1;
 limit = 100;
 while (n < limit) {
@@ -18,3 +18,4 @@ while (n < limit) {
     }
 }
 print("Total primes found: ", count, "\n");
+print('\\');
