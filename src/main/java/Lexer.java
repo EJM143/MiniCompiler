@@ -10,6 +10,8 @@ import java.util.Scanner;
  * Lexer class provides functionality to tokenize source code
  * It reads input from a file, tokenizes it, and writes the
  * resulting tokens to another file.
+ *
+ * Completed by Edale Miguel
  */
 public class Lexer {
     private int line;
@@ -382,7 +384,7 @@ public class Lexer {
         if (1==1) {
             try {
 
-                File f = new File("src/main/resources/count.c");
+                File f = new File("src/main/resources/prime.c");
                 Scanner s = new Scanner(f);
                 String source = " ";
                 String result = " ";

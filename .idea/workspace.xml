@@ -5,7 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a7ac25b6-265d-43ed-8230-0c6749f7127e" name="Changes" comment="New commit with added getNextToken() code">
-      <change afterPath="$PROJECT_DIR$/UML Diagram/MiniCompilerUMLDiagram2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/LexerJUnitTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Lexer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Lexer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/hello1.lex" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hello1.lex" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,8 +35,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -88,7 +91,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Lexer">
+  <component name="RunManager" selected="JUnit.LexerJUnitTest.string_lit">
     <configuration name="Lexer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Lexer" />
       <module name="MiniCompiler" />
@@ -96,11 +99,32 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LexerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="LexerJUnitTest.char_lit" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="MiniCompiler" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="LexerTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="MAIN_CLASS_NAME" value="LexerJUnitTest" />
+      <option name="METHOD_NAME" value="char_lit" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LexerJUnitTest.getToken" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="MiniCompiler" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="LexerJUnitTest" />
+      <option name="METHOD_NAME" value="getToken" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LexerJUnitTest.string_lit" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="MiniCompiler" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="LexerJUnitTest" />
+      <option name="METHOD_NAME" value="string_lit" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -115,33 +139,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LexerTest.string_lit" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="MiniCompiler" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="LexerTest" />
-      <option name="METHOD_NAME" value="string_lit" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="LexerTest.testChar_lit" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="MiniCompiler" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="LexerTest" />
-      <option name="METHOD_NAME" value="testChar_lit" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.LexerJUnitTest.string_lit" />
         <item itemvalue="Application.Lexer" />
+        <item itemvalue="JUnit.LexerJUnitTest.getToken" />
+        <item itemvalue="JUnit.LexerJUnitTest.char_lit" />
         <item itemvalue="JUnit.LexerTest.char_lit" />
-        <item itemvalue="JUnit.LexerTest.string_lit" />
-        <item itemvalue="JUnit.LexerTest.testChar_lit" />
-        <item itemvalue="JUnit.LexerTest" />
       </list>
     </recent_temporary>
   </component>
@@ -160,7 +164,7 @@
       <workItem from="1714235853846" duration="15115000" />
       <workItem from="1714607563139" duration="1135000" />
       <workItem from="1714779529561" duration="58000" />
-      <workItem from="1714779659460" duration="14790000" />
+      <workItem from="1714779659460" duration="19238000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit, incomplete solution">
       <created>1678238319702</created>
