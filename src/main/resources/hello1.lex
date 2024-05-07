@@ -1,94 +1,40 @@
-    4      1 Identifier      count
-    4      7 Op_assign      
-    4      9 Op_negate      
-    4     10 Integer             1
-    4     11 Semicolon      
-    5      1 Identifier      n
-    5      3 Op_assign      
-    5      5 Integer             1
-    5      6 Semicolon      
-    6      1 Identifier      limit
-    6      7 Op_assign      
-    6      9 Integer           100
-    6     12 Semicolon      
-    7      1 Keyword_while  
-    7      7 LeftParen      
-    7      8 Identifier      n
-    7     10 Op_less        
-    7     12 Identifier      limit
-    7     17 RightParen     
-    7     19 LeftBrace      
-    8      5 Identifier      k
-    8      6 Op_assign      
-    8      8 Semicolon      
-    9      5 Identifier      p
-    9      6 Op_assign      
-    9      8 Semicolon      
-   10      5 Identifier      n
-   10      6 Op_assign      
-   10      8 Op_add         
-   10      9 Integer             2
-   10     10 Semicolon      
-   11      5 Keyword_while  
-   11     11 LeftParen      
-   11     12 LeftParen      
-   11     13 Identifier      k
-   11     14 Op_multiply    
-   11     15 Identifier      k
-   11     16 Op_lessequal   
-   11     19 RightParen     
-   11     21 Op_and         
-   11     24 LeftParen      
-   11     25 Identifier      p
-   11     26 RightParen     
-   11     27 RightParen     
-   11     29 LeftBrace      
-   12      9 Identifier      p
-   12     10 Op_assign      
-   12     12 Op_divide      
-   12     13 Identifier      k
-   12     14 Op_multiply    
-   12     15 Identifier      k
-   12     16 Op_notequal    
-   12     19 Semicolon      
-   13      9 Identifier      k
-   13     10 Op_assign      
-   13     12 Op_add         
-   13     13 Integer             2
-   13     14 Semicolon      
-   14      5 RightBrace     
-   15      5 Keyword_if     
-   15      8 LeftParen      
-   15      9 Identifier      p
-   15     10 RightParen     
-   15     12 LeftBrace      
-   16      9 Keyword_print  
-   16     14 LeftParen      
-   16     15 Identifier      n
-   16     16 Comma          
-   16     18 String          " is prime\n"
-   16     31 RightParen     
-   16     32 Semicolon      
-   17      9 Identifier      count
-   17     15 Op_assign      
-   17     17 Identifier      count
-   17     23 Op_add         
-   17     25 Integer             1
-   17     26 Semicolon      
-   18      5 RightBrace     
-   19      1 RightBrace     
-   20      1 Keyword_print  
-   20      6 LeftParen      
-   20      7 String          "Total primes found: "
-   20     29 Comma          
-   20     31 Identifier      count
-   20     36 Comma          
-   20     38 String          "\n"
-   20     42 RightParen     
-   20     43 Semicolon      
-   21      1 Keyword_print  
-   21      6 LeftParen      
-   21      7 Integer            92
-   21     11 RightParen     
-   21     12 Semicolon      
-   22      1 End_of_input   
+    5      1 Identifier      num
+    5      5 Op_assign      
+    5      7 Integer             5
+    5      8 Semicolon      
+    6      1 Keyword_if     
+    6      4 LeftParen      
+    6      5 Identifier      num
+    6      9 Op_less        
+    6     11 Integer             0
+    6     12 RightParen     
+    6     14 LeftBrace      
+    7      5 Keyword_print  
+    7     10 LeftParen      
+    7     11 String          "Number is negative\n"
+    7     33 RightParen     
+    7     34 Semicolon      
+    9      1 RightBrace     
+    9      3 Keyword_else   
+    9      8 Keyword_if     
+    9     11 LeftParen      
+    9     12 Identifier      num
+    9     16 Op_equal       
+    9     19 Integer             0
+    9     20 RightParen     
+    9     22 LeftBrace      
+   10      5 Keyword_print  
+   10     10 LeftParen      
+   10     11 String          "Number is zero\n"
+   10     29 RightParen     
+   10     30 Semicolon      
+   12      1 RightBrace     
+   12      3 Keyword_else   
+   12      8 LeftBrace      
+   13      5 Keyword_print  
+   13     10 LeftParen      
+   13     11 String          "Number is positive\n"
+   13     33 RightParen     
+   13     34 Semicolon      
+   15      1 RightBrace     
+   16      1 End_of_input   

@@ -382,26 +382,32 @@ public class Lexer {
 
     public static void main(String[] args) {
         if (1==1) {
+
             try {
 
-                File f = new File("src/main/resources/prime.c");
-                Scanner s = new Scanner(f);
-                String source = " ";
-                String result = " ";
-                while (s.hasNext()) {
-                    source += s.nextLine() + "\n";
-                }
-                Lexer l = new Lexer(source);
-                result = l.printTokens();
-
-                outputToFile(result);
-
-            } catch(FileNotFoundException e) {
-                error(-1, -1, "Exception: " + e.getMessage());
+            File f = new File("src/main/resources/testFile1.c");
+            Scanner s = new Scanner(f);
+            String source = " ";
+            while (s.hasNext()) {
+                source += s.nextLine() + "\n";
             }
+          String result = LexerParser(source);
+                  outputToFile(result);
+
+        } catch(FileNotFoundException e) {
+            error(-1, -1, "Exception: " + e.getMessage());
+        }
+
         } else {
             error(-1, -1, "No args");
         }
+    }
+    public static String LexerParser(String fileContent) {
+
+            Lexer l = new Lexer(fileContent);
+            String result = l.printTokens();
+
+            return result;
     }
 }
 

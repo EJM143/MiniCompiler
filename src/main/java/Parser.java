@@ -14,6 +14,11 @@ class Parser {
     private Token token;
     private int position;
 
+    public static String ParseLexicalOutput(String result) { //TODO: CREATE METHOD)
+        return "";
+    }
+
+
     static class Node {
         public NodeType nt;
         public Node left, right;
