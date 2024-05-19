@@ -249,23 +249,23 @@ public class Lexer {
             // remaining case statements
             case '=' :
                 t = follow('=', TokenType.Op_equal, TokenType.Op_assign, line, pos);
-                getNextChar();
+                //getNextChar();
                 return t;
             case '<':
                 t = follow('=', TokenType.Op_lessequal, TokenType.Op_less, line, pos);
-                getNextChar();
+                //getNextChar();
                 return t;
             case '>':
                 t = follow('=', TokenType.Op_greaterequal, TokenType.Op_greater, line, pos);
-                getNextChar();
+                //getNextChar();
                 return t;
             case '!':
                 t = follow('=', TokenType.Op_notequal, TokenType.Op_not, line, pos);
-                getNextChar();
+                //getNextChar();
                 return t;
             case '*' :
                 t =new Token(TokenType.Op_multiply, "", line, pos);
-                getNextChar();
+               getNextChar();
                 return t;
             case ';':
                 t = new Token(TokenType.Semicolon, "", line, pos);
@@ -286,7 +286,6 @@ public class Lexer {
                 t = new Token(TokenType.RightParen, "", line, pos);
                 getNextChar();
                 return t;
-                // TODO:complete '(' if needed.
             case '{':
                 t = new Token(TokenType.LeftBrace, "", line, pos);
                 getNextChar();
@@ -369,9 +368,10 @@ public class Lexer {
      * Outputs the result to a file
      * @param result    The result to be written
      */
-    static void outputToFile(String result) {
+    static void outputToFile(String outFileName, String result) {
+
         try {
-            FileWriter myWriter = new FileWriter("src/main/resources/hello1.lex");
+            FileWriter myWriter = new FileWriter(outFileName);
             myWriter.write(result);
             myWriter.close();
             System.out.println("Successfully wrote to the file.");
@@ -382,26 +382,35 @@ public class Lexer {
 
     public static void main(String[] args) {
         if (1==1) {
+            LexerFiles("src/main/resources/prime.c", "src/main/resources/prime.lex");
+            LexerFiles("src/main/resources/fizzbuzz.c", "src/main/resources/fizzbuzz.lex");
+            LexerFiles("src/main/resources/99bottles.c", "src/main/resources/99bottles.lex");
+            LexerFiles("src/main/resources/count.c", "src/main/resources/count.lex");
+            LexerFiles("src/main/resources/testFile1.c", "src/main/resources/testFile1.lex");
+            LexerFiles("src/main/resources/testFile2.c", "src/main/resources/testFile2.lex");
+        } else {
+            error(-1, -1, "No args");
+        }
+    }
 
-            try {
+    public static void LexerFiles(String inFileName, String outFileName) {
+        try {
 
-            File f = new File("src/main/resources/testFile1.c");
+            File f = new File(inFileName);
             Scanner s = new Scanner(f);
             String source = " ";
             while (s.hasNext()) {
                 source += s.nextLine() + "\n";
             }
-          String result = LexerParser(source);
-                  outputToFile(result);
+            String result = LexerParser(source);
+            outputToFile(outFileName, result);
 
         } catch(FileNotFoundException e) {
             error(-1, -1, "Exception: " + e.getMessage());
         }
-
-        } else {
-            error(-1, -1, "No args");
-        }
     }
+
+
     public static String LexerParser(String fileContent) {
 
             Lexer l = new Lexer(fileContent);
@@ -409,5 +418,6 @@ public class Lexer {
 
             return result;
     }
+
 }
 
