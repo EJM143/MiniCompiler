@@ -9,7 +9,14 @@ import java.util.ArrayList;
 import java.util.Map;
 import java.util.HashMap;
 
+/**
+ * Parser Class for mini compiler in Java.
+ * @author Jordan Fleming
+ * @version 1.0
+ * @since 5/18/2024
+ */
 class Parser {
+
     private List<Token> source;
     private Token token;
     private int position;
@@ -18,7 +25,9 @@ class Parser {
         return "";
     }
 
-
+    /**
+     * Inner Node class for tree creation.
+     */
     static class Node {
         public NodeType nt;
         public Node left, right;
@@ -47,6 +56,9 @@ class Parser {
         }
     }
 
+    /**
+     * Token class for token representation.
+     */
     static class Token {
         public TokenType tokentype;
         public String value;
@@ -62,6 +74,9 @@ class Parser {
         }
     }
 
+    /**
+     * Enum token types
+     */
     static enum TokenType {
         End_of_input(false, false, false, -1, NodeType.nd_None),
         Op_multiply(false, true, false, 13, NodeType.nd_Mul),
@@ -147,6 +162,12 @@ class Parser {
         this.token = this.source.get(this.position++);
         return this.token;
     }
+
+    /**
+     * Method to break down expression into base parts and return node with token.
+     * @param p  precedence as int
+     * @return   node with token
+     */
     Node expr(int p) {
         // create nodes for token types such as LeftParen, Op_add, Op_subtract, etc.
         // be very careful here and be aware of the precendence rules for the AST tree
@@ -196,6 +217,11 @@ class Parser {
         }
         error(this.token.line, this.token.pos, msg + ": Expecting '" + s + "', found: '" + this.token.tokentype + "'");
     }
+
+    /**
+     * Method to handle token held in token holder variable. Will create node depending on type of token.
+     * @return      Node with
+     */
     Node stmt() {
         // this one handles TokenTypes such as Keyword_if, Keyword_else, nd_If, Keyword_print, etc.
         // also handles while, end of file, braces
@@ -302,7 +328,11 @@ class Parser {
         }
     }
 
-
+    /**
+     * Method to run parser on a given file. Takes in a file name and parses the given file. Only able to parse 1 file
+     * at a time.
+     * @param args      Filename to parse.
+     */
     public static void main(String[] args) {
         if (1==1) {
             try {
@@ -348,8 +378,8 @@ class Parser {
                 str_to_tokens.put("Comma", TokenType.Comma);
                 str_to_tokens.put("Identifier", TokenType.Identifier);
                 // finish creating your Hashmap. I left one as a model
-
-                Scanner s = new Scanner(new File("src/main/resources/hello.lex"));
+                File lexFile = new File(Args[0]);
+                Scanner s = new Scanner(lexFile);
                 String source = " ";
                 while (s.hasNext()) {
                     String str = s.nextLine();
